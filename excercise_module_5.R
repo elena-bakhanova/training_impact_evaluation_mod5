@@ -47,7 +47,7 @@ hiv_data$got[is.na(hiv_data$got)] <- 0
 reg_model <- lm(got ~ treatment, data = hiv_data)
 summary(reg_model)
 
-# Run a regression of 'got' on 'treatment' with robust standards errors
+## Run a regression of 'got' on 'treatment' with robust standards errors
 # Install additional packages for robust standard errors
 install.packages("lmtest")
 install.packages("sandwich")
@@ -69,8 +69,7 @@ hiv_data %>%
 reg_model_age <- lm(got ~ treatment + age, data = hiv_data)
 coeftest(reg_model_age, vcov = vcovHC(reg_model_age, type = "HC0"))
 
-
-## Regress `got` on `treatment`, `male`, and an interaction between `treatment` and `male`
+# Regress `got` on `treatment`, `male`, and an interaction between `treatment` and `male`
 reg_model_male <- lm(got ~ treatment + male + treatment:male, data = hiv_data)
 coeftest(reg_model_male, vcov = vcovHC(reg_model_male, type = "HC0"))
 
