@@ -37,7 +37,7 @@ hiv_data <- hiv_data %>%
                     labels = c("Control", "Treatment")))
 
 # Double check that NAs were correctly shown
-print(treatment)
+print(hiv_data$treatment)
 
 # Note: variable 'got' indicates whether or not a participant received the result of the test
 # Substitute NA in 'got' to zero
